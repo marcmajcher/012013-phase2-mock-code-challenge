@@ -113,6 +113,11 @@ input:focus {
   margin-top: 0.5rem;
 }
 
+.card button.delete {
+  outline: 1px solid rgb(0, 0, 0);
+  outline-offset: -1px;
+}
+
 @media (min-width: 768px) {
   .cards {
     display: flex;

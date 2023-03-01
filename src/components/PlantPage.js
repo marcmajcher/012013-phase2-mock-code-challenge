@@ -27,13 +27,26 @@ function PlantPage() {
       .then(plant => {
         setPlants([...plants, plant])
       });
-  }
+  };
+
+  function onDelete(plant) {
+    fetch(jsonUrl+plant.id, {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(setPlants(plants.filter(currentPlant => currentPlant.id !== plant.id)))
+  };
 
   return (
     <main>
       <NewPlantForm onSubmit={onSubmit}/>
       <Search search={search} setSearch={setSearch}/>
-      <PlantList plants={plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase()))}/>
+      <PlantList 
+        plants={plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase()))}
+        onDelete={onDelete}
+      />
     </main>
   );
 }
