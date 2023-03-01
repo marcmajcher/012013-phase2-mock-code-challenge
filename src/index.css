@@ -111,6 +111,8 @@ input:focus {
 
 .card button {
   margin-top: 0.5rem;
+  max-width: 50%;
+  font-size: 12px;
 }
 
 .card button.delete {
