@@ -7,6 +7,7 @@ const jsonUrl = "http://localhost:6001/plants/";
 function PlantPage() {
   
   const [plants, setPlants] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch(jsonUrl)
@@ -31,8 +32,8 @@ function PlantPage() {
   return (
     <main>
       <NewPlantForm onSubmit={onSubmit}/>
-      <Search />
-      <PlantList plants={plants}/>
+      <Search search={search} setSearch={setSearch}/>
+      <PlantList plants={plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase()))}/>
     </main>
   );
 }

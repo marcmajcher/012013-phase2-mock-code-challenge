@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Eric Thvedt",
+      "image": "d",
+      "price": "011",
+      "id": 8
     }
   ]
 }
